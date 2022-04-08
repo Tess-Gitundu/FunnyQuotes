@@ -8,6 +8,7 @@ import { Quote } from '../quote';
 export class QuotesComponent implements OnInit {
 
   quotes: Quote[] = [
+    new Quote (1, 'People say nothing is impossible, but I do nothing everyday.', 'A.A. Milne', 'Tess', 0, 0),
     new Quote (1, 'People say nothing is impossible, but I do nothing everyday.', 'A.A. Milne', 'Tess', 0, 0)
   ];
 
