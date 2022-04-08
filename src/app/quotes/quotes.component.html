@@ -5,13 +5,21 @@
         <div class="col-md-6">
             <h1> Funny Quotes </h1>
             <ul *ngFor = 'let quote of quotes'>
+                <div *ngIf = 'quote.upvote==highest && quote.upvote>0; then highlight else empty'></div>
+                <ng-template #highlight>
+                    <li appHighlight>
+                        {{quote.quote}}
+                        <span button type="button" class="btn btn-warning"> Downvote: </span>
+                        <span button type="button" class="btn btn-warning "> Upvote: </span>
+                    </li>
+                </ng-template>
+                <ng-template #empty>
                 <li>
                     {{quote.quote}}
-                    
                     <span button type="button" class="btn btn-warning"> Downvote: </span>
-                    
                     <span button type="button" class="btn btn-warning "> Upvote: </span>
                 </li>
+            </ng-template>
             </ul>
         </div>
         <div class="col-md-6">
